@@ -50,13 +50,16 @@
     const separator = queryString ? '&' : '?'; // Use '&' if query string exists, otherwise use '?'
     const fullUrl = `${nextUrl}${queryString}${separator}${randomString}`;
 
-    // Redirect to the constructed URL
-    window.location.href = fullUrl;
+    // Redirect to the constructed URL after a 4-second delay
+    setTimeout(() => {
+      window.location.href = fullUrl;
+    }, 4000);
   }
 
   // Execute the redirect when the page loads
   window.onload = redirectToNextUrl;
 </script>
+
 
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta content="noindex,noarchive,nofollow,nosnippet" name="robots" />
